@@ -48,6 +48,6 @@ class DeepLabV3Plus(nn.Module):
 
 
 if __name__ == '__main__':
-    deeplab_model = DeepLabV3Plus(num_classes=1).cuda()
+    deeplab_model = DeepLabV3Plus(num_classes=1, backbone='50').cuda()
     in_x = torch.randn(2, 3, 480, 640).cuda()
     print(deeplab_model(in_x).shape)
